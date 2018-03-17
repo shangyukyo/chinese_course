@@ -1,0 +1,110 @@
+/*  
+Theme Name: news
+Description: This is my theme for a tutorial.
+Version: 1.0
+Author: Liu Xiangjun
+*/
+.footer{
+	background-color: #282828;
+	padding-top: 35px;
+    margin-top: 44px;
+    padding-bottom: 30px;
+}
+.block h4 a{
+	color: #999;
+	font-size: 18px;
+}
+.block ul li{
+	line-height: 16px;
+	padding:4px 0;
+}
+.block ul li a{
+	color: #fff;
+	font-size: 14px;
+}
+.other h4{
+	font-size: 18px;
+    padding-bottom: 10px;
+    margin-top: 22px;
+    padding-left: 10px;
+    font-weight: 100;
+    color: rgba(255,255,255,.8);
+}
+.other ul li{
+	float: left;
+	padding:0 1.5%;
+}
+.copyright{
+	margin-top: 30px;
+}
+.copyright p{
+	color: #999;
+    text-align: right;
+}
+.copy_massage{
+	border-bottom: 1px solid #535353;
+	padding-bottom: 25px;
+}
+.footer_img{
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+}
+.footer_img img{
+	width: 100%;
+	max-width: 570px;
+}
+.logo_2{
+	width: 100%;
+	max-width: 334px;
+    margin-left: -10px;
+}
+.block h4,.block h4 a{
+	color: #999;
+	font-family: 'MIcrosoft YaHei';
+}
+.other ul {
+    position: relative;
+}
+#erweima{
+	top: -203px;
+    left: -45px;
+    position: absolute;
+    display: none;
+    width: 152px;
+    height: 192px;
+    background: #fff;
+    text-align: center;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    top: 192px;
+    display: block;
+    left: 65px;
+}
+.popover-title {
+    margin: 0;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 5px 5px 0 0;
+}
+.popover-content {
+    padding: 9px 14px;
+}
+.popover-content img {
+    width: 120px;
+}
+@media only screen and (max-width: 450px){
+    .two{
+        height: 234px;
+    }
+}

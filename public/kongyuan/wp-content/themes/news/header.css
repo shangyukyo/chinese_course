@@ -1,0 +1,264 @@
+/*  
+Theme Name: news
+Description: This is my theme for a tutorial.
+Version: 1.0
+Author: Liu Xiangjun
+*/
+.content{
+	margin-top: 30px;
+}
+.h_top{
+	padding:10px 0;
+	position: relative;
+}
+.logo,.top_center,.top_right{
+	float:left;
+    margin-left: -15px;
+}
+.top_center{
+	margin:0 30% 0 5%;
+}
+.dropdown .nav li{
+	padding:0 8px;
+}
+.nav li a,.top_right a{
+	font-size: 18px;
+	color: #444;
+	opacity: .8;
+	padding:0 5px;    
+	line-height: 65px;
+	display: block;
+}
+.nav li .sub{
+	position: absolute;
+	z-index: 100;
+	background-color: #fff;
+	width: 140px;
+	border-radius: 5px;
+    box-shadow: 0px 0px 18px #999;
+    top: 15px;
+    left:0;
+    display: none;
+}
+.dropdown .nav li ul li{
+	line-height: 35px;
+}
+.dropdown .nav li ul li a{
+	line-height: 35px;
+}
+.nav_more:hover{
+	color:#c00;
+}
+.dropdown .nav li ul li a:hover{
+	color: #c00;
+}
+.nav_2{
+	height: 60px;
+	position: relative;
+	width: 100%;
+	background-color: #1083ea;
+}
+.nav_2 ul li{
+	float:left;
+	line-height: 58px;
+	font-size: 18px;
+	position: relative;
+	margin: 0 15px;
+}
+
+.nav_2 ul li.zx{
+	font-size: 2.5em;
+	color: #fff;
+	font-weight: bold;
+	padding-right: 3%;
+}
+.nav_2 ul li a{
+	color: #fff;
+}
+.nav_2 ul li.search{
+	float: right;
+}
+.navbar-toggle .icon-bar{
+	background-color: #333;
+}
+.navbar-toggle{
+	margin-top:0;
+}
+.news_li:hover{
+	background:#3666ff;
+}
+
+.nav_2 ul li .ul2{
+	position: absolute;
+	background-color: #fff;
+	width: 100%;
+	left:0;
+	box-shadow: 0 0 10px #333;
+	text-align: center;
+	z-index: 10;
+	display: none;
+}
+.nav_2 ul li .ul2 li{
+	float: none;
+	padding:0;
+}
+.nav_2 ul li .ul2 li:hover{
+	background-color: #f2f2f2;
+}
+.nav_2 ul li .ul2 li a{
+	color: #000;
+}
+.nav_2 ul li ul li{
+	margin: 0 15px;
+}
+
+#topnav{width:100%;background-color:#fff;text-align: center;z-index: 999;display: block;}
+.home {
+	float: left;
+	}
+/* .home a:hover {
+
+	background: #fff;
+	} */
+#topnav.current_page_item , #topnav .current-menu-item {
+	/* background: #fff; */
+	}
+#topnav .current-menu-item a,#topnav .current_page_item a {
+	/* color: #fff !important; */
+	}
+#topnav .current-menu-item  li a,#topnav .sub-menu a ,#topnav .current_page_item li a {
+	color: #fff;
+	width:100%;
+	height:40px;
+	line-height:40px;
+	font-size:12px;
+	text-align: center;
+    margin-left: -15px;
+	}
+.sub-menu a:hover {
+	color: #fff !important;
+}
+#topnav .sub-menu{
+	border:1px solid #dfdfdf;
+}
+#topnav .current-menu-item .sub-menu li a{
+	white-space: nowrap;
+}
+
+.sub-menu{
+	display:none;
+}
+
+.menu-item:hover .sub-menu{
+	display:block;
+}
+#topnav li {
+	float: left;
+	}
+ 
+#topnav li a, #topnav li a:link, #topnav li a:visited{
+	color: #fff;
+	padding-left:20px;
+	padding-right:20px;
+	}
+#topnav li a:hover, #topnav li a:active {
+	background: RGB(17,79,152);
+	color: #fff;
+	text-decoration: none;
+	padding-left:20px;
+	padding-right:20px;
+	} 
+	.menu-item a{
+		display:block;
+	}
+#topnav li li {
+	float: left;
+	width:100%;
+	}
+#topnav li li a {
+	font-size:14px;
+	}
+#topnav li ul {
+	position: absolute;
+	left: 0em;
+	margin: 0;
+	z-index: 999;
+	width:100%;
+	background:#fff;
+	}
+ #topnav  li ul li a {
+	color: #000 !important;
+	
+	}
+/*#topnav li ul li a:hover {
+	}
+#topnav .sf-sub-indicator {
+	display: none;
+	}
+#topnav  li ul li a.sf-with-ul {
+			display: none;
+	}
+#topnav  li ul li a:hover {
+
+	color: #fff !important;
+	text-decoration: none;
+	} 
+#topnav  li ul ul {
+	
+	}
+#topnav  li ul ul li a {}
+#topnav  li ul li ul li a {}
+#topnav  li:hover {
+	 position: static; 
+	}
+#topnav  li:hover ul ul, #topnav  li.sfhover ul ul,
+#topnav  li:hover ul ul ul, #topnav  li.sfhover ul ul ul,
+#topnav  li:hover ul ul ul , #topnav  li.sfhover ul ul ul ul {
+	 left: -999em; 
+	}
+#topnav  li:hover ul, #topnav  li.sfhover ul,
+#topnav  li li:hover ul, #topnav  li li.sfhover ul,
+#topnav  li li li:hover ul, #topnav  li li li.sfhover ul,
+#topnav  li li li li:hover ul, #topnav  li li li li.sfhover ul {
+	left: auto;
+	}
+*/
+@media only screen and (max-width: 470px){
+	.nav_2 ul li {
+	    float: left;
+	    line-height: 58px;
+	    font-size: 18px;
+	    position: relative;
+	    font-size: 14px;
+	    margin:0;
+	}
+	.nav_2 ul li.zx {
+	    font-size: 1.5em;
+	    color: #fff;
+	    font-weight: bold;
+	    padding-right: 3%;
+	}
+}
+@media only screen and (max-width: 767px){
+	.nav_sm{
+		position: fixed;
+		left:0;
+		background-color: #f3f3f3;
+	    z-index: 10;
+	    top: -15px;
+	    height: 103%;
+	    max-width: 240px;
+	    width: 50%;
+	    padding-left: 12%;    
+	}
+	.Mask{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);    
+		position: fixed;
+    	z-index: 1;
+    	display: none;
+	}
+}
+
+/*头部end*/
