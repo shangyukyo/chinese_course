@@ -1,0 +1,33 @@
+@import "_helper";
+
+body {
+	background: url(b.png);		
+
+	& > .login_panel {
+		width: 14%;		
+		margin-top: 10%;	
+		margin-left: 43%;
+		text-align:  center;		
+
+		input {
+			width: 100%;
+		}
+
+		img {
+			border-radius: 100%;
+		}
+
+		.btn.btn-transparent {
+	    border-radius: 0;
+	    border-width: 2px;
+	    color: #cccbcc;
+	    background: url(b.png);
+	    border-color: #cccbcc;
+	    -webkit-transition: background-color 1s, color 1s;
+	    transition: background-color 1s, color 1s;	
+
+		}		
+
+	}
+
+}

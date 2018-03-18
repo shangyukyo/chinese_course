@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html
+  head
+    title 汉语桥
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+  	.menu-bar
+
+      ul.nav.nav-pills.nav-stacked
+        li
+          a href="#"  class=""
+            i.fa.fa-list 
+            span.ml-5  教师管理      
+        li
+          a href="#"  class=""
+            i.fa.fa-list 
+            span.ml-5 学生管理
+        li
+          a href="#"  class=""
+            i.fa.fa-list 
+            span.ml-5 课程管理
+
+
+  	.main
+        - if true
+          .state-nav
+            .logo.pull-left
+              = image_tag "logostar.png", size: '30x30'
+              span.ml-10 汉语桥信息收集平台
+
+  		.content
+    		= yield
+

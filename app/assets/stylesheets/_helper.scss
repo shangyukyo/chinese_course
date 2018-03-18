@@ -1,0 +1,77 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$master-background-color: #333333;
+
+$content-background-color: #e8e8e8;
+
+body {
+  font-family: "Cursive";
+  font-size: 12px;
+}
+
+* {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+@for $i from 1 through 20 {
+  .ml-#{$i} { margin-left: $i + px };
+  .mr-#{$i} { margin-right: $i + px };
+  .mt-#{$i} { margin-top: $i + px };
+  .mb-#{$i} { margin-top: $i + px };
+}
+
+@for $i from 1 through 20 {
+  .pd-#{$i} { padding: $i + px };
+  .pd-#{$i} { padding: $i + px };
+}
+
+@for $i from 1 through 20 {
+  .pl-#{$i} { padding: $i + px };  
+}
+
+@for $i from 1 through 20 {
+  .pt-#{$i} { padding: $i + px };  
+}
+
+@for $i from 1 through 20 {
+  .pr-#{$i} { padding: $i + px };  
+}
+
+@for $i from 1 through 20 {
+  .pb-#{$i} { padding: $i + px };  
+}
+
+.label-empty-bg {
+  background: #fff;
+  border: 1px dotted #999;  
+  color: #929292;  
+}
+
+.text-white{
+  color: #fff;
+}
+
+body, html {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  height:100%;
+  width:100%;
+
+
+  .pager > ul > li > a.current{
+    border: none;
+    background: none;
+    font-size: 14px;    
+  }
+
+
+}
+
+
+
+

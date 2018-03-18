@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html
+  head
+    title 汉语桥
+    = csrf_meta_tags
+    = stylesheet_link_tag    'login', media: 'all', 'data-turbolinks-track': 'reload'     
+
+  body
+    .login_panel
+    	= form_tag login_admin_index_index_path, methods: :post do 
+    		.form-group
+    			= image_tag 'logostar.png', size: '88x135'
+    		.form-group
+    			= text_field_tag 'username', params[:username], class: 'form-control', placeholder: '账号'	    		
+    		.form-group
+    			= text_field_tag 'password', nil, class: 'form-control', type: 'password', placeholder: '密码'
+
+    		.form-group
+    			= submit_tag "登录", class: 'btn btn-transparent'
+        - if flash[:alert].present?
+          .alert.alert-danger= flash[:alert]          
+
