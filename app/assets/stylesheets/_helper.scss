@@ -24,7 +24,7 @@ body {
   .mb-#{$i} { margin-top: $i + px };
 }
 
-@for $i from 1 through 20 {
+@for $i from 1 through 100 {
   .pd-#{$i} { padding: $i + px };
   .pd-#{$i} { padding: $i + px };
 }

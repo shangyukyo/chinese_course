@@ -4,6 +4,8 @@ class CreateTeachers < ActiveRecord::Migration[5.1]
     	t.string :username
     	t.string :mobile
     	t.string :email    	
+    	t.string :wechat
+    	t.text :extras
       t.timestamps
     end
   end
