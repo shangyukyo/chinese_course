@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Bootstrap for UI
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -36,6 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Font Icons
 gem 'font-awesome-sass', '~> 4.5.0'
 
+gem 'unicorn'
 
 # Slim for Template
 gem 'slim', '~> 3.0.6'

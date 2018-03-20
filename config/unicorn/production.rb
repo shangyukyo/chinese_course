@@ -4,10 +4,10 @@
 # shared_path = "#{app_path}"
 # current_path = "#{app_path}"
 
-application = "chinses-course"
+application = "chinses_course"
 app_path = "~/www/#{application}"
-shared_path = "#{app_path}/shared"
-current_path = "#{app_path}/current"
+shared_path = app_path
+current_path = app_path
 
 # Set unicorn options
 worker_processes 2
