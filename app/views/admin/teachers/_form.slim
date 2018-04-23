@@ -1,0 +1,14 @@
+= form_for teacher, url: url, class: 'form', method: params[:action] == 'edit' ? 'put' : 'post' do |f|
+	.form-group
+		= f.text_field :username, class: 'form-control', placeholder: '教师姓名'
+	.form-group
+		= f.text_field :mobile, class: 'form-control', placeholder: '联系电话'		
+	.form-group
+		= f.text_field :email, class: 'form-control', placeholder: '邮箱'		
+	.form-group
+		= f.text_field :wechat, class: 'form-control', placeholder: '微信号'
+	.form-group
+		= f.number_field :lesson_size, class: 'form-control', placeholder: '授课次数'
+
+	.form-group
+		= f.submit '提交', class: 'btn btn-primary'
