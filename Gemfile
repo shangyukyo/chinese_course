@@ -40,6 +40,8 @@ gem 'font-awesome-sass', '~> 4.5.0'
 # Slim for Template
 gem 'slim', '~> 3.0.6'
 
+gem 'unicorn'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
