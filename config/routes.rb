@@ -2,18 +2,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: redirect("/bread/index.html") 
 
-  scope :admin, module: 'admin' do 
-	  scope shallow_path: 'index',  controller: 'index' do
-	    get  :login
-	    post :login
+  scope :admin, module: 'admin', as: 'admin' do 	  
+    match :login, to: 'index#login', via: [:get , :post]    
 
-	    get :yijianxiang
-	    get :zaixianzixun
-	    get :vistor
-	  end
+    resources :lessons
+    resources :payments
+    resources :students
+    resources :teachers
+    resources :products
+
   end  
 
-  resources :yijianxiang
-  resources :zaixianzixun
-  resources :vistor
+  resources :addresses
+  resources :students
+  resources :products
+
 end

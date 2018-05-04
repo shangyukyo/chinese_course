@@ -1,0 +1,27 @@
+= javascript_include_tag 'admin_product'
+
+- if flash[:alert].present?
+	.alert.alert-danger= flash[:alert]
+
+= form_tag url, method: method,  class: 'form' do 
+	.form-group
+		label.label-control 商品名称		
+		= text_field_tag :name, product&.name, class: 'form-control', placeholder: '商品名称'
+	.form-group
+		label.label-control 商品价格
+		= number_field_tag :price, product&.price, class: 'form-control', placeholder: '商品价格'
+	.form-group
+		label.label-control 商品介绍
+		= text_area_tag :description, product&.description, class: 'form-control simditor', placeholder: '商品简介'
+
+	.form-group
+		= submit_tag '提交', class: 'btn btn-primary'
+
+
+javascript:
+	var editor = new Simditor({
+	  textarea: $('#description'),
+	  toolbar: ['title','bold','italic','underline','strikethrough','color','|',
+      'ol','ul','blockquote','code','table','link','hr','|',
+      'indent','outdent', 'fontScale', 'alignment']
+	});

@@ -1,0 +1,32 @@
+.pd-15		
+	.panel.panel-default		
+		.panel-heading.clearfix
+			.pull-left
+				i.fa.fa-reorder 
+				span.ml-10 商品管理			
+			.pull-right
+				a.btn.btn-primary.btn-xs href="#{new_admin_product_path}" 新建商品
+		.panel-body
+			.table-responsive
+			  table.table
+			    thread
+			      tr.active
+			      	th 商品名称
+			        th 商品价格
+			        th 商品简介			        
+			        th 创建时间
+			        th #
+			    tbody		    	
+		        - @products.each do |p|
+
+		          tr
+		            td= p.name
+		            td= p.price
+		            td= p.description.truncate(100)
+		            td= p.created_at.strftime("%F %T")		            
+		            td
+		            	a href="#{edit_admin_product_path(p)}" 编辑
+
+		.panel-footer
+			= will_paginate @products, renderer: BootstrapPagination::Rails 		  
+		            	

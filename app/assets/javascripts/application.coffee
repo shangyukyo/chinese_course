@@ -1,0 +1,9 @@
+#= require jquery
+#= require jquery_ujs
+#= require rails-ujs
+#= require turbolinks
+#= require bootstrap/button
+# = require simditor/module
+# = require simditor/hotkeys
+# = require simditor/uploader
+#= require_tree .
