@@ -1,0 +1,14 @@
+default: &default
+  wechat:
+    AppID: wx9bc1840de1564aef
+    AppSecret: e2a46c241585b1d08c95297aaea8491c
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    db: 0    
+development: 
+  <<: *default
+
+production:
+  <<: *default
