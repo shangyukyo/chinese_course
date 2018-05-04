@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :students
   resources :products
 
+  match :sign_in, to: 'index#sign_in', via: [:get, :post]
 end

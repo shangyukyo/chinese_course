@@ -7,6 +7,8 @@ class IndexController < ApplicationController
 		info_rsp = RestClient.get "https://api.weixin.qq.com/sns/userinfo?access_token=#{o_r['access_token']}&openid=#{o_r['openid']}&lang=zh_CN "
 		info_r = JSON.parse info_rsp
 
+		puts info_r.inspect
+		puts "********"
 		user = User.find_by(wx_openid: info_r['openid'])
 		if user.present?
 			login_as(user)
