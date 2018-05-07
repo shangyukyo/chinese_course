@@ -1,4 +1,6 @@
 @import "_helper";
+@import "uploadifive";
+
 
 body {
 	
@@ -188,6 +190,57 @@ body {
 			}
 		}
 	}
+
+	.upload-img{			
+		
+		.img-panel {								
+			min-height: 100px;					
+
+			.photo-input-container{
+        height:100px;		        
+        position:relative;
+        float: left;
+        width: 100px;
+        margin-left: 10px;		        		        
+
+        & > #product_photo{
+	        height:100px;
+	        width: 100px;
+	        background: red;
+	        overflow: hidden;
+	        font-size: 12px;
+	        position:absolute;
+	        right:0;
+	        top:0;
+	        opacity: 0;
+	        filter:alpha(opacity=0);
+	        cursor:pointer;		        	
+        }
+
+        .uploadifive-button {
+        	border-radius: 0px;		        
+        }
+			}
+
+			.img {
+				width: 100px;
+				height: 100px;						
+				float: left;
+				margin-left: 10px;
+				position: relative;
+
+				& > span.remove {
+					position: absolute;
+					top: -8px;
+					right: -8px;
+					color: red;							
+					font-size: 20px;
+					background: #fff;		
+					border-radius: 50px;												
+				}
+			}			
+		}				
+	}	
 
 
 }

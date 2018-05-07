@@ -44,6 +44,20 @@ class Admin::ProductsController < Admin::ApplicationController
 		end
 	end
 
+	def upload_photo
+		uploader = ProductUploader.new
+		uploader.store! params[:Filedata]
+		puts uploader.inspect
+    # extname = params[:Filedata].content_type.split('/').last.downcase    
+    # asset = Asset::ProductPicture.new
+    # asset.user = current_user
+    # asset.filename = "#{SecureRandom.hex(5)}.#{extname.downcase}"
+    # asset.save!
+    # code, result, response_headers = asset.upload params[:Filedata].tempfile.path
+
+    # render json: {asset_id: asset.id.to_s, preview: asset.url(:small)}		
+	end
+
 	private
 
 	def product_params

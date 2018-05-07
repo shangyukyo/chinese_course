@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   resources :addresses
   resources :students
-  resources :products
+  resources :products do
+    collection do 
+      post :upload_photo
+    end
+  end
 
   match :sign_in, to: 'index#sign_in', via: [:get, :post]
 end
