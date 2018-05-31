@@ -8,7 +8,7 @@ $(document).ready ->
     width: 100
     height: 100
     multi: true
-    removeCompleted: true      
+    removeCompleted: true
     fileType: 'image/*'
     onUploadComplete: (file, data) ->
       rsp = JSON.parse data      
