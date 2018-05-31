@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
 
   def wechat_auth_step1
     session[:return_to] = request.original_url
-    redirect_uri = ERB::Util.url_encode("www.chinesecio.org.cn/sign_in")  
+    redirect_uri = ERB::Util.url_encode("http://www.chinesecio.org.cn/sign_in")  
     redirect_to "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{Setting.wechat.AppID}&redirect_uri=#{redirect_uri}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
   end
 
