@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :login?, :current_user, :set_title
+  helper_method :login?, :current_student, :set_title
   before_action :login_required
   
   def login_required    
@@ -16,36 +16,36 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_user
-    @current_user ||= login_from_session || login_from_cookies unless defined?(@current_user)
-    @current_user
+  def current_student
+    @current_student ||= login_from_session || login_from_cookies unless defined?(@current_student)
+    @current_student
   end
 
   def login?
-    !!current_user
+    !!current_student
   end
 
-  def login_as(user)
-    session[:user_id] = user.id
-    @current_user = user    
+  def login_as(student)
+    session[:student_id] = student.id
+    @current_student = student    
   end
 
 
   def login_from_session
-    if session[:user_id].present?
+    if session[:student_id].present?
       begin
-        User.find session[:user_id]
+        Student.find session[:student_id]
       rescue
-        session[:user_id] = nil
+        session[:student_id] = nil
       end
     end
   end
 
   def login_from_cookies
     if cookies[:remember_token].present?
-      if user = User.find_by_remember_token(cookies[:remember_token])
-        session[:user_id] = user.id
-        user
+      if student = Student.find_by_remember_token(cookies[:remember_token])
+        session[:student_id] = student.id
+        student
       else
         forget_me
         nil

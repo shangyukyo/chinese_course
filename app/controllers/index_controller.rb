@@ -9,19 +9,19 @@ class IndexController < ApplicationController
 
 		puts info_r.inspect
 		puts "********"
-		user = User.find_by(wx_openid: info_r['openid'])
-		if user.present?
-			login_as(user)
+		student = Student.find_by(wx_openid: info_r['openid'])
+		if student.present?
+			login_as(student)
 		else
-			user = User.new			
-			user.wx_openid = info_r['openid']
-			user.nickname = info_r['nickname']
-			user.sex = info_r['sex']
-			user.city = info_r['city']
-			user.province = info_r['province']
-			user.head_img = info_r['headimgurl']
-			user.save!
-			login_as(user)
+			student = Student.new			
+			student.wx_openid = info_r['openid']
+			student.nickname = info_r['nickname']
+			student.sex = info_r['sex']
+			student.city = info_r['city']
+			student.province = info_r['province']
+			student.head_img = info_r['headimgurl']
+			student.save!
+			login_as(student)
 		end		
 		redirect_to session[:return_to]		
 	end
