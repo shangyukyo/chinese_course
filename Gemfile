@@ -38,6 +38,8 @@ gem 'carrierwave', '~> 1.0'
 # App conf
 gem 'settingslogic', '~> 2.0.9'
 
+# Http Client
+gem 'rest-client', '~> 2.0.2'
 
 # Pagination
 gem "will_paginate", '~> 3.1.0'
