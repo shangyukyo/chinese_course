@@ -17,6 +17,7 @@ class IndexController < ApplicationController
 			student.wx_openid = info_r['openid']
 			student.nickname = info_r['nickname']
 			student.sex = info_r['sex']
+			student.mobile = 0
 			student.head_img = info_r['headimgurl']
 			student.save!
 			login_as(student)
