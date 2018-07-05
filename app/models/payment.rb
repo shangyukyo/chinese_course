@@ -7,6 +7,18 @@ class Payment < ApplicationRecord
     self.order.pay!
   end
 
+  before_validation do
+    return if self.number.present?
+
+    loop do
+      self.number = [       
+        '%08d' % SecureRandom.random_number(10000000)
+      ].join
+
+      break unless Payment.find_by(number: self.number).present?
+    end
+  end  
+
   def execute_url(opts = {})
     checkout_opts = {} 
     checkout_opts = { trade_type: 'JSAPI', openid: student.wx_openid }
