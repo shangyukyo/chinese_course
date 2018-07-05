@@ -45,6 +45,7 @@ class Order < ApplicationRecord
 			payment = order.payments.build  	
 			payment.student_id = order.student_id
 			payment.amount = order.total
+			payment.payment_method = 'WECHAT'
 			payment.save
 
 			[order, payment]

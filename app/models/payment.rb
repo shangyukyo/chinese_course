@@ -4,6 +4,8 @@ class Payment < ApplicationRecord
 
 
   def complete!
+    self.notified = true
+    self.save
     self.order.pay!
   end
 

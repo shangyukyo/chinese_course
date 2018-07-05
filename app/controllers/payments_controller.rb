@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
     return render_succeed if @payment.completed?
 
     if @request_payload['return_code'] == 'SUCCESS'
-      @payment.complete!
+      @payment.complete!      
       render_succeed
     else
       render_fail
