@@ -27,16 +27,16 @@ class Order < ApplicationRecord
   end
 
 
-  def self.checkout student
+  def self.checkout opts
 		Order.transaction do 
-			product = Product.find params[:product_id]
-			order = student.orders.build
+			product = Product.find opts[:product_id]
+			order = opts[:student].orders.build			
 			order.total = product.price
 			order.product_id = product.id
-			order.state = params[:state]
-			order.city = params[:city]
-			order.region = params[:region]
-			order.street = params[:street]
+			order.state = opts[:state]
+			order.city = opts[:city]
+			order.region = opts[:region]
+			order.street = opts[:street]
 			order.save
 #<Payment id: nil, student_id: nil, order_id: nil, number: nil,
 # amount: 0.0, payment_method: nil, state: 0, payment_transacation_id:

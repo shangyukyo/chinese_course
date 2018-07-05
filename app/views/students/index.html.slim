@@ -12,13 +12,13 @@
 ul.list-group
 	li.list-group-item
 		i.fa.fa-book
-		span.ml-10 总课时: #{current_student.number_of_lessons}节
+		span.ml-10 总课时: #{current_student.number_of_lessons.to_i}节
 	li.list-group-item
 		i.fa.fa-bookmark
-		span.ml-10 已上课: 111节
+		span.ml-10 已上课: #{current_student.lessons.size}节
 	li.list-group-item
 		i.fa.fa-bookmark-o
-		span.ml-10 剩余课时: #{current_student.lessons.size}节
+		span.ml-10 剩余课时: #{current_student.number_of_lessons.to_i}节
 
 	li.list-group-item
 		i.fa.fa-calendar

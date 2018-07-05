@@ -52,10 +52,10 @@ javascript:
 			var region = $('select#address_region').val();
 			var street = $('input[name=street]').val();
 
-			$.post('/products/pay', {product_id: #{@product.id}, state: state: city: city, region: region, street: street }, function(rsp){
-
+			$.post('/products/pay', {product_id: #{@product.id}, state: state, city: city, region: region, street: street }, function(rsp){
+				console.log("*****")
 				if( rsp.success) {
-					WeixinJSBridge.invoke('getBrandWCPayRequest', rsp.execute_payload, (wrsp) function(){
+					WeixinJSBridge.invoke('getBrandWCPayRequest', rsp.execute_payload, function(wrsp){
 						if(wrsp.err_msg == 'get_brand_wcpay_request:ok'){
 							alert('支付成功')
 						}else if(wrsp.err_msg == 'get_brand_wcpay_request:cancel') {

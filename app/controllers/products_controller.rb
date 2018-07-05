@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	before_action :find_product, only: [:show, :confirm]	
-	
+	# skip_before_action :login_required
 	def index
 	end
 	
@@ -14,7 +14,15 @@ class ProductsController < ApplicationController
 	def pay		
     begin
       Payment.transaction {
-      	order, payment = Order.checkout current_student
+        opts = {
+          student: current_student,
+          product_id: params[:product_id],
+          state: params[:state],
+          city: params[:city],
+          region: params[:region],
+          street: params[:street]
+        }
+      	order, payment = Order.checkout opts
 
         opts = {}
 
@@ -34,7 +42,7 @@ class ProductsController < ApplicationController
         render json: ret
       }
     rescue => e
-      notify_error(e)
+      raise e      
       render json: { success: false, error: '请求支付出错，请重试或者联系客服' }
     end
 

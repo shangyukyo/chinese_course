@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180702082743) do
+ActiveRecord::Schema.define(version: 20180705094149) do
 
   create_table "customer_services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "password_digest", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180702082743) do
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "student_id"
+    t.integer "product_id"
     t.decimal "total", precision: 10, scale: 2, default: "0.0"
     t.string "order_no", null: false
     t.integer "payment_state", default: 0
