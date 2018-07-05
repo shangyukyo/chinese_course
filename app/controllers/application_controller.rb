@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :login?, :current_student, :set_title
-  # before_action :login_required
+  before_action :login_required
   
   def login_required    
     unless login?            
