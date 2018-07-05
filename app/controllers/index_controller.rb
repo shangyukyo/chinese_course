@@ -22,6 +22,6 @@ class IndexController < ApplicationController
 			student.save!
 			login_as(student)
 		end		
-		redirect_to session[:return_to]		
+		redirect_to session[:return_to]	 || students_path	
 	end
 end
