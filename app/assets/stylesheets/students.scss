@@ -1,0 +1,32 @@
+.header {
+	height: 250px;
+	background: #87D55C;
+
+	text-align: center;
+
+	img {
+		border-radius: 100%;
+		margin-top: 50px;
+	}
+
+	.username {
+		font-size: 16px;
+		color: #fff;
+	}	
+}
+
+.tit {
+	background: #f1f1f1;
+	line-height: 30px;
+	color: #6e6f6e;
+	padding: 5px;
+	bold: weight;
+}
+
+ul.list-group {
+	li.list-group-item {
+		border-radius: 0px;
+		border-left: 0px;
+		border-right: 0px;
+	}
+}

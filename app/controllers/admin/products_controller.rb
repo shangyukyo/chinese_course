@@ -35,6 +35,7 @@ class Admin::ProductsController < Admin::ApplicationController
 		begin
 			@product.name = product_params[:name]
 			@product.price = product_params[:price]
+			@product.number_of_lessons = product_params[:number_of_lessons]
 			@product.description = product_params[:description]
 			@product.save!
 			redirect_to admin_products_path	
@@ -61,7 +62,7 @@ class Admin::ProductsController < Admin::ApplicationController
 	private
 
 	def product_params
-		params.permit(:name, :price, :description)
+		params.permit(:name, :price, :description, :number_of_lessons)
 	end
 
 	def find_product

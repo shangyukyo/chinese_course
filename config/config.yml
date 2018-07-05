@@ -2,7 +2,8 @@ default: &default
   wechat:
     AppID: wx9bc1840de1564aef
     AppSecret: e2a46c241585b1d08c95297aaea8491c
-
+    AppKey: cdd6233a858573bf100269ee28ed01ce
+    MchID: '1494828642'
   redis:
     host: 127.0.0.1
     port: 6379

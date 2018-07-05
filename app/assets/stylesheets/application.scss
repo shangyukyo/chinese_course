@@ -1,9 +1,21 @@
 @import "_helper";
 @import "uploadifive";
-
+@import "main";
 
 body {
-	
+  margin: 0px;
+  padding: 0px;
+  background-color: #f1f1f1;
+  color: #454545;
+  font-family: "Gotham SSm A","Gotham SSm B",Helvetica,Arial,sans-serif;
+  -webkit-appearance: none;
+
+  .wrapper {
+	  max-width: 640px;
+	  margin: auto;
+	  height: 100%;	  
+  }
+
 	td {
 		word-wrap:break-word;
 		max-width: 400px;
@@ -242,5 +254,10 @@ body {
 		}				
 	}	
 
+	.wrapper {
+	  max-width: 640px;
+	  margin: auto;
+	  min-height: 400px;	
+	}
 
 }

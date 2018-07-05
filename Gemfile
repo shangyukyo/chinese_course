@@ -35,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.0'
 
 
+# Wechat Pay
+gem 'wx_pay', :github => 'jasl/wx_pay'
+
 # App conf
 gem 'settingslogic', '~> 2.0.9'
 

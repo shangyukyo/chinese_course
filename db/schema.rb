@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320093127) do
+ActiveRecord::Schema.define(version: 20180702082743) do
 
   create_table "customer_services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "password_digest", null: false
@@ -32,8 +32,28 @@ ActiveRecord::Schema.define(version: 20180320093127) do
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
   end
 
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "student_id"
+    t.decimal "total", precision: 10, scale: 2, default: "0.0"
+    t.string "order_no", null: false
+    t.integer "payment_state", default: 0
+    t.string "state"
+    t.string "city"
+    t.string "region"
+    t.string "street"
+    t.text "remarks"
+    t.text "extras"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_no"], name: "index_orders_on_order_no"
+    t.index ["payment_state"], name: "index_orders_on_payment_state"
+    t.index ["student_id"], name: "index_orders_on_student_id"
+  end
+
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "student_id"
+    t.string "order_id"
     t.string "number", null: false
     t.decimal "amount", precision: 12, scale: 2, default: "0.0", null: false
     t.string "payment_method", null: false
@@ -52,6 +72,8 @@ ActiveRecord::Schema.define(version: 20180320093127) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "description"
+    t.text "pictures"
+    t.integer "number_of_lessons", default: 0
     t.decimal "price", precision: 10, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

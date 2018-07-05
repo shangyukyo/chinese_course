@@ -1,0 +1,42 @@
+.profile {
+	width: 100%;	
+	img {
+		width: 100%;
+	}
+}
+
+.product-name {
+	font-size: 26px;
+	padding: 10px 0 0 10px;
+	background: #fff;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.product-price {
+	padding: 10px 0px 0px 10px;
+	font-size: 20px;
+	font-weight: bold;	
+	background: #fff;
+	color: #fe6302;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.product-detail {
+	padding: 10px 0px 0px 10px;
+	font-size: 14px;
+	font-weight: bold;	
+	background: #fff;	
+	color: #999;
+	margin-bottom: 50px;
+}
+
+.operation {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+
+	a {
+		width: 100%;
+	}
+}

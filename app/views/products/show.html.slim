@@ -1,1 +1,17 @@
-|1111
+= content_for :assets do 
+	= stylesheet_link_tag "products"
+
+.profile
+	= image_tag "profile.jpg"
+.product-name.text-muted	
+	= @product.name
+
+.product-price	
+	| ¥
+	= @product.price
+
+.product-detail	
+	= @product.description.html_safe
+
+.tabbar	
+	a.or_all_btn.create-btn href="#{confirm_product_path(@product)}" 购买

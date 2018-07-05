@@ -18,6 +18,17 @@ Rails.application.routes.draw do
   resources :products do
     collection do 
       post :upload_photo
+      post :pay
+    end
+
+    member do 
+      get :confirm
+    end    
+  end
+
+  resources :payments do 
+    collection do 
+      post :notify
     end
   end
 

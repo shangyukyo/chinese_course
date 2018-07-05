@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jasl/wx_pay.git
+  revision: 743ead12c60598bdef57f823556bb09312978919
+  specs:
+    wx_pay (0.18.0)
+      activesupport (>= 3.2)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -286,6 +294,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   will_paginate (~> 3.1.0)
   will_paginate-bootstrap (~> 1.0.1)
+  wx_pay!
 
 BUNDLED WITH
    1.16.1

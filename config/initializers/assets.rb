@@ -14,4 +14,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( 
 	login.css 
 	admin_product.js
+	students.css
+	products.css
+
+	product.js
 )

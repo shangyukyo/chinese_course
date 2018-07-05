@@ -1,0 +1,71 @@
+= javascript_include_tag 'product'
+
+.chinese-address
+  .tableview.select_view
+    .title
+      | 收货地址
+    .select_wrapper#distpicker data-toggle="distpicker" data-autoselect="3"
+      select#address_province name="province"
+      select#address_city name="city"
+      select#address_region name="region"
+  .bb_line
+.tableview.input_view
+  .title
+    | 街道地址      
+  = text_field_tag :street, nil, placeholder: ''
+
+.bb_line
+
+.tableview.input_view
+	.title 配送方式
+	span 免运费
+
+.order_wrapper.mt_10
+  .order_list
+	  .order_item.bg_gray
+	    a 
+	      .order_pic
+	        = image_tag "profile.jpg"
+	      .order_info
+	        .order_name
+	          = @product.name
+	        .order_price	        		          
+	          | ¥ #{@product.price}
+	      .order_num
+	        | X 1
+	    .c
+
+.text-center
+	h3
+		| 实付金额(免运费): ¥ #{@product.price}
+
+.tabbar
+	a.or_all_btn.pay-btn 去付款
+
+
+
+javascript:
+	$(function(){
+		$("a.pay-btn").click(function(){
+			var state = $('select#address_province').val();
+			var city = $('select#address_city').val();
+			var region = $('select#address_region').val();
+			var street = $('input[name=street]').val();
+
+			$.post('/products/pay', {product_id: #{@product.id}, state: state: city: city, region: region, street: street }, function(rsp){
+
+				if( rsp.success) {
+					WeixinJSBridge.invoke('getBrandWCPayRequest', rsp.execute_payload, (wrsp) function(){
+						if(wrsp.err_msg == 'get_brand_wcpay_request:ok'){
+							alert('支付成功')
+						}else if(wrsp.err_msg == 'get_brand_wcpay_request:cancel') {
+							alert('取消支付')
+						}else{
+							alert('支付失败')
+						}
+					})
+				}
+
+			})
+		})
+	})

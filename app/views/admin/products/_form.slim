@@ -4,18 +4,19 @@
 	.alert.alert-danger= flash[:alert]
 
 = form_tag url, method: method,  class: 'form' do 
-	.form-group.upload-img
-		label.label-control 上传图片
-		.img-panel
-			- if false
-				- pictures.each do |pic|
-					.img
-						= image_tag pic.url(:small), size: '100x100'
-						span.remove.glyphicon.glyphicon-minus-sign
-						input type="hidden" name="picture_id" value="#{pic.id}"
+	- if false
+		.form-group.upload-img
+			label.label-control 上传图片
+			.img-panel
+				- if false
+					- pictures.each do |pic|
+						.img
+							= image_tag pic.url(:small), size: '100x100'
+							span.remove.glyphicon.glyphicon-minus-sign
+							input type="hidden" name="picture_id" value="#{pic.id}"
 
-			.photo-input-container						
-				input type="file" name="product_photo" id="product_photo"		
+				.photo-input-container						
+					input type="file" name="product_photo" id="product_photo"		
 
 	.form-group
 		label.label-control 商品名称
@@ -23,6 +24,11 @@
 	.form-group
 		label.label-control 商品价格
 		= number_field_tag :price, product&.price, class: 'form-control', placeholder: '商品价格'
+
+	.form-group
+		label.label-control 课时
+		= number_field_tag :number_of_lessons, product&.number_of_lessons, class: 'form-control', placeholder: '多少节课时'
+
 	.form-group
 		label.label-control 商品介绍
 		= text_area_tag :description, product&.description, class: 'form-control simditor', placeholder: '商品简介'

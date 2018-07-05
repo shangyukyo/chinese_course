@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :find_product, only: [:show]
+	before_action :find_product, only: [:show, :confirm]	
 	
 	def index
 	end
@@ -7,6 +7,39 @@ class ProductsController < ApplicationController
 
 	def show
 	end
+
+	def confirm
+	end
+
+	def pay		
+    begin
+      Payment.transaction {
+      	order, payment = Order.checkout current_student
+
+        opts = {}
+
+        ip = request.env['HTTP_X_REAL_IP'].presence || request.remote_ip
+        ip = '127.0.0.1' if ip.include?(':') or Rails.env.development?
+        
+        opts.merge!(spbill_create_ip: ip)
+    
+        ret = { 
+          success: true, 
+          execute_payload: payment.execute_url(opts),
+          client: 'WECHAT', 
+          payment_method: 'WECHAT',
+          payment_id: payment.id 
+        }
+
+        render json: ret
+      }
+    rescue => e
+      notify_error(e)
+      render json: { success: false, error: '请求支付出错，请重试或者联系客服' }
+    end
+
+	end
+
 
 	private
 
