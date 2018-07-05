@@ -2,8 +2,8 @@
 	= stylesheet_link_tag 'students'
 
 .header
-	= image_tag 'avatar.png', size: '100x100'
-	.username.mt-10 学生一号	
+	= image_tag current_student.head_img, size: '100x100'
+	.username.mt-10= current_student.nickname
 
 
 .tit
@@ -12,13 +12,13 @@
 ul.list-group
 	li.list-group-item
 		i.fa.fa-book
-		span.ml-10 总课时: 111节
+		span.ml-10 总课时: #{current_student.number_of_lessons}节
 	li.list-group-item
 		i.fa.fa-bookmark
 		span.ml-10 已上课: 111节
 	li.list-group-item
 		i.fa.fa-bookmark-o
-		span.ml-10 剩余课时: 111节
+		span.ml-10 剩余课时: #{current_student.lessons.size}节
 
 	li.list-group-item
 		i.fa.fa-calendar
