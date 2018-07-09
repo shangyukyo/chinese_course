@@ -10,14 +10,15 @@ class Payment < ApplicationRecord
   end
 
   before_validation do
-    return if self.number.present?
+    if not self.number.present?
 
-    loop do
-      self.number = [       
-        '%08d' % SecureRandom.random_number(10000000)
-      ].join
+      loop do
+        self.number = [       
+          '%08d' % SecureRandom.random_number(10000000)
+        ].join
 
-      break unless Payment.find_by(number: self.number).present?
+        break unless Payment.find_by(number: self.number).present?
+      end
     end
   end  
 
