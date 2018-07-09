@@ -76,7 +76,7 @@ class Payment < ApplicationRecord
     # body = subject.gsub(/[^\p{L}\s]+/, '').squeeze(' ').strip rescue "支付订单 - #{payment_no}"
     # body = body.truncate(80)
     total_fee = (self.amount.round(2) * 100).to_i
-    total_fee = 0.1
+    total_fee = 1
     payload = {
       body: "支付订单 - #{number}",
       out_trade_no: number,
