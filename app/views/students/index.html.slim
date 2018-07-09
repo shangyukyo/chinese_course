@@ -18,11 +18,11 @@ ul.list-group
 		span.ml-10 已上课: #{current_student.lessons.size}节
 	li.list-group-item
 		i.fa.fa-bookmark-o
-		span.ml-10 剩余课时: #{current_student.number_of_lessons.to_i}节
+		span.ml-10 剩余课时: #{current_student.number_of_lessons.to_i - current_student.lessons.size}节
 
 	li.list-group-item
 		i.fa.fa-calendar
-		span.ml-10 课程有效期: #{Time.now.strftime("%F %T")}
+		span.ml-10 课程有效期: #{(Time.now + 360.days).strftime("%F %T")}
 
 	li.list-group-item
 		i.fa.fa-paperclip

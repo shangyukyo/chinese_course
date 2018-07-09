@@ -1,0 +1,34 @@
+.pd-15		
+	.panel.panel-default		
+		.panel-heading.clearfix
+			.pull-left
+				i.fa.fa-reorder 
+				span.ml-10 学生管理管理			
+		.panel-body
+			.table-responsive
+			  table.table
+			    thread
+			      tr.active
+			      	th 头像
+			      	th 昵称
+			      	th 手机号
+			        th 微信号			        
+			        th 总课时
+			        th 已用课时
+			        th 剩余课时			        
+			        th 注册时间			        
+			    tbody		    	
+		        - @students.each do |s|
+
+		          tr
+		            td
+		            	= image_tag s.head_img, size: '50x50'
+		            td= s.mobile
+		            td= s.nickname
+		            td= s.wechat
+		            td= s.number_of_lessions.to_i
+		            td= s.lessons.size
+		            td= s.number_of_messions.to_i - s.lessons.size
+		            td= s.created_at.strftime("%F %T")
+
+		            	
