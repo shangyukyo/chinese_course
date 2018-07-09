@@ -1,0 +1,27 @@
+.pd-15		
+	.panel.panel-default		
+		.panel-heading.clearfix
+			.pull-left
+				i.fa.fa-reorder 
+				span.ml-10 订单管理			
+		.panel-body
+			.table-responsive
+			  table.table
+			    thread
+			      tr.active
+			      	th 购买人微信号
+			      	th 购买人昵称
+			      	th 商品名称
+			      	th 总金额
+			      	th 支付状态
+			      	th 收货地址
+			        th 创建时间
+			    tbody		    	
+		        - @orders.each do |o|
+		          tr
+		            td= o.student.wehchat
+		            td= o.student.nickname
+		            td= o.product.name
+		            td= o.product.total
+		            td= o.payment_paid? ? '已支付' : '未支付'
+		            td= o.created_at.strftime("%F %T")

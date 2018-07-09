@@ -34,5 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :payments
+
   match :sign_in, to: 'index#sign_in', via: [:get, :post]
 end

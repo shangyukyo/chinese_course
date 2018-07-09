@@ -27,6 +27,10 @@ html
           a href="#{admin_lessons_path}" 
             i.fa.fa-list 
             span.ml-5 课时管理
+        li class=(controller_name == 'payments' ? 'active' : nil)
+          a href="#{admin_payments_path}" 
+            i.fa.fa-list 
+            span.ml-5 订单管理
 
 
   	.main
