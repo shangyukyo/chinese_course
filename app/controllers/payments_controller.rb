@@ -1,6 +1,8 @@
 class PaymentsController < ApplicationController
+  skip_before_action :login_required
   skip_before_action :verify_authenticity_token
 	before_action :set_request_payload, only: [:notify]
+
 	def notify
     if @request_payload['trade_type'] == 'APP'
       opts = { key: 'cdd6233a858573bf100269ee28ed01ce' }
