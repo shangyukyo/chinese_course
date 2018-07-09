@@ -23,5 +23,5 @@
 		            td= o.student.nickname
 		            td= o.product.name
 		            td= o.total
-		            td= o.payment_paid? ? '已支付' : '未支付'
+		            td= o.paid? ? '已支付' : '未支付'
 		            td= o.created_at.strftime("%F %T")
