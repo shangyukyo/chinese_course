@@ -8,8 +8,7 @@
 			.table-responsive
 			  table.table
 			    thread
-			      tr.active
-			      	th 购买人微信号
+			      tr.active			      	
 			      	th 购买人昵称
 			      	th 商品名称
 			      	th 总金额
@@ -18,8 +17,7 @@
 			        th 创建时间
 			    tbody		    	
 		        - @orders.each do |o|
-		          tr
-		            td= o.student.wechat
+		          tr		            
 		            td= o.student.nickname
 		            td= o.product.name
 		            td= o.total
