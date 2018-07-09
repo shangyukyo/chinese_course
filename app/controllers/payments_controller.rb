@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
 	before_action :set_request_payload, only: [:notify]
 	def notify
     if @request_payload['trade_type'] == 'APP'
-      opts = { key: 'c991600de2703fd6b3ccfb057cdb2ef5' }
+      opts = { key: 'cdd6233a858573bf100269ee28ed01ce' }
     else
       opts = {}
     end   
@@ -30,4 +30,23 @@ class PaymentsController < ApplicationController
     @checkout_method = params[:method]
     @request_payload = Hash.from_xml(URI.decode(request.body.read))['xml']
   end
+
+  def render_succeed
+    render json: {success: true}
+  end
+
+  def render_fail msg = "服务器错误"
+    render json: {success: false, msg: msg}
+  end
+
+  def find_payment
+    payment_no = @request_payload['out_trade_no']
+    transaction_id = @request_payload['transaction_id']
+
+    @payment = Payment.find_by!(number: payment_no)
+
+    @payment.payment_transacation_id = transaction_id
+    @payment.notified = true    
+    @payment.save!
+  end  
 end
