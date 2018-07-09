@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 	before_action :set_request_payload, only: [:notify]
 	def notify
     if @request_payload['trade_type'] == 'APP'
