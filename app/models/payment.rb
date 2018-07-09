@@ -2,12 +2,19 @@ class Payment < ApplicationRecord
 	belongs_to :order
 	belongs_to :student
 
+  enum state: {
+    pending: 0,
+    processing: 10,
+    completed: 20,
+    failed: -10
+  }
 
   def complete!
     self.notified = true
     self.save
     self.order.pay!
   end
+
 
   before_validation do
     if not self.number.present?
