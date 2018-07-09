@@ -6,4 +6,7 @@
 # = require simditor/module
 # = require simditor/hotkeys
 # = require simditor/uploader
+#= require moment
+#= require moment_with_locales
+#= require bootstrap-datetimepicker
 #= require_tree .

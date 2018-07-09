@@ -1,0 +1,37 @@
+.pd-60
+	= form_tag admin_students_path do 
+		= hidden_field_tag :student_id, @student.id
+		.form-group		
+			= select_tag :teacher_id, options_from_collection_for_select(Teacher.all, "id", "username"), class: 'form-control'
+		.form-group
+	    .input-append.date#start_at.input-group data-date-format="yyyy-mm-dd hh:ii:ss"
+	      input.input-sm.form-control size="20" type="text" name="start_at" placeholder="开始时间" value="#{params[:start_at]}"
+			  span.input-group-addon
+			    span.glyphicon.glyphicon-calendar	
+		.form-group
+	    .input-append.date#end_at.input-group data-date-format="yyyy-mm-dd hh:ii:ss"
+	      input.input-sm.form-control size="20" type="text" name="end_at" placeholder="结束时间" value="#{params[:end_at]}"
+			  span.input-group-addon
+			    span.glyphicon.glyphicon-calendar		
+
+		.form-group.mt-10		
+			a.btn.btn-primary.create-lesson href="javascript:;" 提交
+
+
+javascript:
+	$(function(){
+		$('#start_at').datetimepicker({
+		    format: 'YYYY-MM-DD HH:mm:ss',
+		    locale: 'zh-cn'
+		});
+
+		$('#end_at').datetimepicker({
+		    format: 'YYYY-MM-DD HH:mm:ss',
+		    locale: 'zh-cn'
+		});			
+
+
+		$('a.create-lesson').click(function(){
+			$('form').submit()
+		})
+	})			

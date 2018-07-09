@@ -16,19 +16,22 @@
 			        th 总课时
 			        th 已用课时
 			        th 剩余课时			        
-			        th 注册时间			        
+			        th 注册时间		
+			        th 操作	        
 			    tbody		    	
 		        - @students.each do |s|
 
 		          tr
 		            td
-		            	= image_tag s.head_img, size: '50x50'
-		            td= s.mobile
+		            	= image_tag s.head_img.to_s, size: '50x50'
 		            td= s.nickname
+		            td= s.mobile
 		            td= s.wechat
-		            td= s.number_of_lessions.to_i
+		            td= s.number_of_lessons.to_i
 		            td= s.lessons.size
-		            td= s.number_of_messions.to_i - s.lessons.size
+		            td= s.number_of_lessons.to_i - s.lessons.size
 		            td= s.created_at.strftime("%F %T")
+		            td
+		            	a href="#{new_admin_student_path(id: s.id)}" 开课
 
 		            	

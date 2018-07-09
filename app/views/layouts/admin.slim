@@ -16,13 +16,17 @@ html
             i.fa.fa-user
             span.ml-5 教师管理      
         li class=(controller_name == 'students' ? 'active' : nil)
-          a href="#"  class=""
+          a href="#{admin_students_path}"
             i.fa.fa-users
             span.ml-5 学生管理
         li class=(controller_name == 'products' ? 'active' : nil)
           a href="#{admin_products_path}" 
             i.fa.fa-list 
             span.ml-5 商品管理
+        li class=(controller_name == 'lessons' ? 'active' : nil)
+          a href="#{admin_lessons_path}" 
+            i.fa.fa-list 
+            span.ml-5 课时管理
 
 
   	.main

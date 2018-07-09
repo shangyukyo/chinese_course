@@ -1,0 +1,26 @@
+.pd-15		
+	.panel.panel-default		
+		.panel-heading.clearfix
+			.pull-left
+				i.fa.fa-reorder 
+				span.ml-10 课程管理			
+
+		.panel-body
+			.table-responsive
+			  table.table
+			    thread
+			      tr.active
+			      	th 学生微信号
+			      	th 学生昵称
+			      	th 教师姓名
+			        th 开始时间
+			        th 结束时间			        
+			        th #
+			    tbody		    	
+		        - @lessons.each do |l|
+		          tr
+		            td= l.student.wechat
+		            td= l.student.nickname
+		            td= l.teacher.username
+		            td= l.start_at.strftime("%F %T")
+		            td= l.end_at.strftime("%F %T")		            
