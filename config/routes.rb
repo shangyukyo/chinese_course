@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     collection do 
       post :upload_photo
       post :pay
+
+      get :success
     end
 
     member do 

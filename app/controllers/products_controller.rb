@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	before_action :find_product, only: [:show, :confirm]	
-	# skip_before_action :login_required
+	skip_before_action :login_required, only: [:success]
 	def index
 	end
 	

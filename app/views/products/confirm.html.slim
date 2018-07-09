@@ -57,7 +57,7 @@ javascript:
 				if( rsp.success) {
 					WeixinJSBridge.invoke('getBrandWCPayRequest', rsp.execute_payload, function(wrsp){
 						if(wrsp.err_msg == 'get_brand_wcpay_request:ok'){
-							alert('支付成功')
+							window.location.href = "/products/success";
 						}else if(wrsp.err_msg == 'get_brand_wcpay_request:cancel') {
 							alert('取消支付')
 						}else{
